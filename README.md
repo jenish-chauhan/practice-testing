@@ -39,6 +39,30 @@ The optimized output will be created in the `dist` folder.
 npm run preview
 ```
 
+## Run With Docker
+
+1. Build the Docker image.
+
+```bash
+docker build -t jenish-portfolio .
+```
+
+2. Run the container.
+
+```bash
+docker run -d -p 8080:80 --name jenish-portfolio jenish-portfolio
+```
+
+3. Open the site.
+
+Visit `http://localhost:8080`.
+
+4. Stop the container when needed.
+
+```bash
+docker stop jenish-portfolio
+```
+
 ## Project Structure
 
 ```text
@@ -49,6 +73,8 @@ PortFolioWebsite/
     index.css
     main.jsx
   index.html
+  Dockerfile
+  nginx.conf
   package.json
   postcss.config.js
   tailwind.config.js
@@ -61,3 +87,4 @@ PortFolioWebsite/
 - The portfolio uses the resume content as the source for skills, projects, certifications, and education.
 - The resume PDF is available directly inside the website through the `public` folder.
 - If PowerShell blocks `npm`, use `npm.cmd run dev`, `npm.cmd run build`, or `npm.cmd run preview`.
+- The Docker image uses a multi-stage build for a smaller production container.
