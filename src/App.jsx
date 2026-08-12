@@ -129,7 +129,7 @@ function App() {
               </a>
               <a
                 className="button button-quiet"
-                href="/jenish-chauhan-resume-v7.pdf"
+                href={`${import.meta.env.BASE_URL}jenish-chauhan-resume-v7.pdf`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -161,7 +161,7 @@ function App() {
             </div>
             <div className="profile-glow" />
             <img
-              src="/jenish-profile-enhanced-transparent.png"
+              src={`${import.meta.env.BASE_URL}jenish-profile-enhanced-transparent.png`}
               alt="Jenish Chauhan"
               className="profile-photo"
             />
