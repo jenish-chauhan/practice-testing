@@ -28,7 +28,9 @@ Open the local URL shown in the terminal, usually `http://localhost:5173`.
 3. Build for production.
 
 ```bash
+
 npm run build
+
 ```
 
 The optimized output will be created in the `dist` folder.
@@ -36,7 +38,9 @@ The optimized output will be created in the `dist` folder.
 4. Preview the production build.
 
 ```bash
+
 npm run preview
+
 ```
 
 ## Run With Docker
@@ -44,13 +48,17 @@ npm run preview
 1. Build the Docker image.
 
 ```bash
+
 docker build -t jenish-portfolio .
+
 ```
 
 2. Run the container.
 
 ```bash
+
 docker run -d -p 8080:80 --name jenish-portfolio jenish-portfolio
+
 ```
 
 3. Open the site.
@@ -60,6 +68,7 @@ Visit `http://localhost:8080`.
 4. Stop the container when needed.
 
 ```bash
+
 docker stop jenish-portfolio
 ```
 
