@@ -1,4 +1,5 @@
-FROM node:22-alpine AS builder
+# Build the Vite application.
+FROM node:22-alpine AS build
 
 WORKDIR /app
 
@@ -8,11 +9,16 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
+# Serve the production build with Nginx.
 FROM nginx:1.27-alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/dist /usr/share/nginx/html
+# The output is hosted under Vite's GitHub Pages base path.
+COPY --from=build /app/dist /usr/share/nginx/html/practice-testing
 
 EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --quiet --spider http://127.0.0.1:80/practice-testing/ || exit 1
 
 CMD ["nginx", "-g", "daemon off;"]
