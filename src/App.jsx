@@ -119,7 +119,7 @@ function App() {
               <em>invisible.</em>
             </h1>
             <p className="hero-intro">
-              I&apos;m <strong>Jenish Chauhan</strong> — an AWS-certified cloud
+              I&apos;m <strong>Jenish Chauhan</strong> — an AWS-certified SAA
               and DevOps engineer focused on dependable infrastructure,
               automated delivery, and systems that scale with calm.
             </p>
